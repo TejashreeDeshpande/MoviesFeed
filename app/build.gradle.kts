@@ -65,9 +65,9 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended")
 
     // Room
-    implementation("androidx.room:room-runtime:2.8.4")
-    annotationProcessor("androidx.room:room-compiler:2.8.4")
-    ksp("androidx.room:room-compiler:2.8.4")
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
 
     // Paging
     implementation(libs.paging.runtime)
