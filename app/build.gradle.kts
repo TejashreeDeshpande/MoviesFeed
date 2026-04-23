@@ -2,8 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-
-    id("org.jetbrains.kotlin.kapt") version "1.9.22"
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
@@ -43,6 +42,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
@@ -65,9 +65,9 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended")
 
     // Room
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.8.4")
+    annotationProcessor("androidx.room:room-compiler:2.8.4")
+    ksp("androidx.room:room-compiler:2.8.4")
 
     // Paging
     implementation(libs.paging.runtime)
@@ -75,6 +75,5 @@ dependencies {
 
     // Navigation
     implementation("androidx.navigation:navigation-compose:2.9.7")
-
     implementation("org.jetbrains:annotations:23.0.0")
 }
